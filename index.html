@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sem Medo de Saber — HIV</title>
+<meta name="description" content="Tudo o que você precisa saber sobre HIV, em linguagem simples: como passa, como se proteger, tratamento grátis, direitos e onde fazer o teste em São José de Ribamar (MA).">
+<meta property="og:title" content="Sem Medo de Saber — HIV hoje não é o HIV de antigamente">
+<meta property="og:description" content="Como passa, como não passa, prevenção grátis no SUS, tratamento e onde fazer o teste em São José de Ribamar.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://thiagomm0306-cell.github.io/sem-medo-de-saber/img/hero.jpg">
+<meta property="og:url" content="https://thiagomm0306-cell.github.io/sem-medo-de-saber/">
+<link rel="canonical" href="https://thiagomm0306-cell.github.io/sem-medo-de-saber/">
+<meta name="theme-color" content="#17120F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --bg2:#F3F0ED; --ink:#17120F; --text:#2A2421; --mute:#5F5752; --line:#E2DCD7;
+  --red:#D0213A; --redText:#B01A31; --sun:#FFC53D; --sea:#0B5566; --dark:#17120F; --onDark:#FFFFFF; --onDarkMute:#CFC7C2;
+  --fs:1.125rem; --gut:16px; --max:1180px;
+  --head:'Archivo', 'Arial Narrow', system-ui, sans-serif;
+  --body:'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141110; --bg2:#1D1917; --ink:#F6F2EF; --text:#E7E1DD; --mute:#AEA59F; --line:#352F2C; --redText:#FF7584; --dark:#0B0908;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141110; --bg2:#1D1917; --ink:#F6F2EF; --text:#E7E1DD; --mute:#AEA59F; --line:#352F2C; --redText:#FF7584; --dark:#0B0908;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+html.a1{font-size:112.5%} html.a2{font-size:125%}
+body{margin:0; background:var(--bg); color:var(--text); font-family:var(--body); font-size:var(--fs); line-height:1.6; overflow-x:hidden}
+img{max-width:100%; height:auto; display:block}
+figure{margin:0}
+a{color:var(--redText); text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--sun); outline-offset:3px}
+.skip{position:absolute; left:-999px; top:8px; background:var(--sun); color:#000; padding:8px 14px; z-index:99; font-weight:700}
+.skip:focus{left:8px}
+.wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gut)}
+h1,h2,h3{font-family:var(--head); color:var(--ink); line-height:1.02; margin:0; font-stretch:78%; letter-spacing:-.01em}
+h2{font-size:clamp(2.2rem, 7vw, 4.4rem); font-weight:800}
+h3{font-size:1.5rem; font-weight:800; font-stretch:85%; line-height:1.15}
+p{margin:0 0 1em}
+.kicker{font-family:var(--head); font-weight:700; font-stretch:100%; text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; color:var(--redText); margin-bottom:14px; display:flex; align-items:center; gap:10px}
+.kicker::before{content:""; width:28px; height:3px; background:currentColor}
+.lead{font-size:1.25rem; max-width:40ch; color:var(--text)}
+section{padding:88px 0}
+.credit{font-size:.72rem; color:var(--mute); margin-top:8px; line-height:1.4}
+.credit.on-photo{position:absolute; right:10px; bottom:8px; color:rgba(255,255,255,.75); margin:0; text-shadow:0 1px 2px rgba(0,0,0,.6); max-width:70%; text-align:right}
+.hl{background:linear-gradient(transparent 62%, var(--sun) 62%, var(--sun) 92%, transparent 92%); color:inherit; padding:0 .06em}
+.on-dark .hl{color:#fff; background:linear-gradient(transparent 62%, var(--red) 62%, var(--red) 92%, transparent 92%)}
+
+/* ===== aviso + menu ===== */
+.notice{background:var(--dark); color:var(--onDarkMute); font-size:.85rem; text-align:center; padding:7px var(--gut); line-height:1.4}
+.notice b{color:#fff}
+.notice a{color:var(--sun)}
+header.top{position:sticky; top:0; z-index:50; background:var(--bg); border-bottom:1px solid var(--line)}
+.bar{display:flex; align-items:center; gap:12px; height:60px}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--ink); font-family:var(--head); font-weight:900; font-stretch:80%; font-size:1.25rem; white-space:nowrap; letter-spacing:-.01em}
+.brand svg{flex:none}
+.nav{display:flex; gap:4px; margin-left:auto; overflow-x:auto; scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.nav a{color:var(--text); text-decoration:none; font-size:.92rem; padding:8px 10px; white-space:nowrap; border-radius:4px}
+.nav a:hover{background:var(--bg2)}
+.tools{display:flex; gap:6px; align-items:center}
+.tbtn{font:700 .9rem var(--body); color:var(--ink); background:transparent; border:1.5px solid var(--line); height:38px; min-width:42px; padding:0 10px; border-radius:6px; cursor:pointer}
+.tbtn:hover{border-color:var(--ink)}
+.wa{display:inline-flex; align-items:center; gap:8px; background:#128C3E; color:#fff; text-decoration:none; font-weight:700; border:0; height:38px; padding:0 14px; border-radius:6px; cursor:pointer; font:700 .92rem var(--body)}
+.wa:hover{background:#0E7533}
+.navrow{display:none}
+@media (max-width:980px){
+  .bar .nav{display:none}
+  .navrow{display:block; border-top:1px solid var(--line)}
+  .navrow .nav{margin:0; padding:4px 8px}
+  .bar .tools{margin-left:auto}
+  .wa .wtxt{display:none}
+}
+
+/* ===== hero ===== */
+.hero{background:var(--dark); color:var(--onDark); padding:0; display:grid; grid-template-columns:1.1fr .9fr; min-height:min(88vh, 820px)}
+.hero .txt{padding:72px max(var(--gut), calc((100vw - var(--max))/2 + var(--gut))) 64px; padding-right:48px; display:flex; flex-direction:column; justify-content:center}
+.hero .where{font-family:var(--head); text-transform:uppercase; letter-spacing:.16em; font-size:.8rem; font-weight:700; color:var(--sun); margin-bottom:22px}
+.hero h1{color:#fff; font-size:clamp(3rem, 8.4vw, 7rem); font-weight:900; font-stretch:72%; line-height:.92; letter-spacing:-.02em; margin-bottom:28px}
+.hero h1 .no{color:var(--sun)}
+.hero p{font-size:1.22rem; color:#EDE7E3; max-width:34ch}
+.hero p strong{color:#fff}
+.btns{display:flex; flex-wrap:wrap; gap:12px; margin-top:18px}
+.btn{display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-weight:700; font-size:1.05rem; padding:15px 22px; border-radius:6px; min-height:52px}
+.btn.primary{background:var(--sun); color:#17120F}
+.btn.primary:hover{background:#FFD266}
+.btn.ghost{color:#fff; border:2px solid rgba(255,255,255,.45)}
+.btn.ghost:hover{border-color:#fff}
+.hero figure{margin:0; position:relative; overflow:hidden}
+.hero figure img{width:100%; height:100%; object-fit:cover; object-position:50% 40%}
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr; min-height:0}
+  .hero figure{order:-1; height:58vh; min-height:340px}
+  .hero .txt{padding:36px var(--gut) 48px}
+}
+
+/* ===== números ===== */
+.nums{display:grid; grid-template-columns:repeat(4,1fr); border-top:2px solid var(--ink); margin-top:48px}
+.num{padding:28px 24px 8px 0; border-right:1px solid var(--line)}
+.num + .num{padding-left:24px}
+.num:last-child{border-right:0}
+.num .big{font-family:var(--head); font-weight:900; font-stretch:70%; font-size:clamp(2.6rem,4.4vw,3.9rem); line-height:1; white-space:nowrap; color:var(--redText); letter-spacing:-.02em}
+.num p{margin:12px 0 10px; color:var(--text)}
+.src{font-size:.75rem; color:var(--mute)}
+@media (max-width:860px){
+  .nums{grid-template-columns:1fr 1fr}
+  .num{padding:24px 14px 8px 0 !important; border-right:0; border-bottom:1px solid var(--line)}
+  .num:nth-child(odd){padding-right:14px !important; border-right:1px solid var(--line)}
+  .num:nth-child(even){padding-left:14px !important}
+}
+@media (max-width:420px){ .nums{grid-template-columns:1fr} .nums .num{border-right:0 !important; padding:22px 0 8px !important} }
+
+.band{position:relative; color:#fff; min-height:520px; display:flex; align-items:flex-end; padding:0}
+.band > img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.band::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,8,7,.05) 20%, rgba(10,8,7,.86) 100%)}
+.band .wrap{position:relative; z-index:2; padding-top:120px; padding-bottom:64px; width:100%}
+.band h2{color:#fff; max-width:18ch}
+.band p{font-size:1.25rem; margin-top:18px; color:#F1ECE8; max-width:44ch}
+
+/* ===== básico ===== */
+.split{display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:48px; border:2px solid var(--ink)}
+.split > div{padding:36px 32px}
+.split > div + div{border-left:2px solid var(--ink); background:var(--bg2)}
+.split .word{font-family:var(--head); font-weight:900; font-stretch:70%; font-size:clamp(4rem,10vw,7.5rem); line-height:.9; color:var(--ink); letter-spacing:-.03em}
+.split .word small{display:block; font-size:1.05rem; letter-spacing:.12em; text-transform:uppercase; font-stretch:100%; font-weight:700; color:var(--redText); margin-top:10px}
+.split p{margin-top:18px; font-size:1.15rem}
+@media (max-width:760px){ .split{grid-template-columns:1fr} .split > div + div{border-left:0; border-top:2px solid var(--ink)} .split > div{padding:28px 20px} }
+.analogy{margin-top:36px; display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:start; background:var(--sun); color:#17120F; padding:32px}
+.analogy .q{font-family:var(--head); font-weight:900; font-size:5rem; line-height:.7; font-stretch:80%}
+.analogy h3{color:#17120F; margin-bottom:10px}
+.analogy p{margin:0; font-size:1.15rem}
+.steps2{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:18px}
+.steps2 div{background:rgba(255,255,255,.55); padding:14px 16px; font-size:1rem; line-height:1.45}
+.steps2 b{display:block; font-family:var(--head); text-transform:uppercase; letter-spacing:.08em; font-size:.8rem; margin-bottom:4px}
+@media (max-width:640px){ .analogy{grid-template-columns:1fr; padding:24px 20px; gap:8px} .analogy .q{font-size:3.5rem} .steps2{grid-template-columns:1fr} }
+
+/* ===== passa / não passa ===== */
+.tx{display:grid; grid-template-columns:.85fr 1.15fr; gap:56px; margin-top:48px; align-items:start}
+.yes h3, .no h3{font-size:1rem; text-transform:uppercase; letter-spacing:.14em; font-stretch:100%; padding-bottom:14px; border-bottom:3px solid; margin-bottom:6px}
+.yes h3{color:var(--redText); border-color:var(--red)}
+.no h3{color:var(--ink); border-color:var(--ink)}
+.yes ul{list-style:none; margin:0; padding:0}
+.yes li{padding:16px 0; border-bottom:1px solid var(--line); font-size:1.12rem}
+.yes li span{display:block; color:var(--mute); font-size:.95rem; margin-top:2px}
+.chips{display:flex; flex-wrap:wrap; gap:10px 12px; margin-top:20px}
+.chip{font-family:var(--head); font-weight:800; font-stretch:80%; font-size:clamp(1.5rem,3.4vw,2.3rem); line-height:1; padding:12px 16px 13px; border:2px solid var(--ink); color:var(--ink); border-radius:999px}
+.no .note{margin-top:22px; font-size:1.1rem}
+.photo-inline{margin-top:28px; position:relative}
+.photo-inline img{width:100%; aspect-ratio:16/10; object-fit:cover; object-position:50% 58%}
+@media (max-width:860px){ .tx{grid-template-columns:1fr; gap:44px} }
+
+/* ===== mitos ===== */
+.myths{margin-top:44px; display:grid; grid-template-columns:1fr 1fr; gap:0 48px}
+.myth{display:grid; grid-template-columns:110px 1fr; gap:18px; padding:22px 0; border-top:1px solid var(--line)}
+.tag{font-family:var(--head); font-weight:900; font-stretch:85%; font-size:.95rem; letter-spacing:.08em; text-transform:uppercase; align-self:start; padding:6px 10px; text-align:center}
+.tag.m{background:var(--ink); color:var(--bg)}
+.tag.v{background:#1B7F45; color:#fff}
+.myth h3{font-size:1.25rem; margin-bottom:6px}
+.myth p{margin:0; color:var(--text)}
+@media (max-width:860px){ .myths{grid-template-columns:1fr} .myth{grid-template-columns:1fr; gap:10px} .tag{justify-self:start} }
+
+/* ===== prevenção ===== */
+.urgent{background:var(--red); color:#fff; padding:0}
+.urgent .wrap{display:grid; grid-template-columns:auto 1fr; gap:40px; align-items:center; padding-top:48px; padding-bottom:48px}
+.urgent .h72{font-family:var(--head); font-weight:900; font-stretch:68%; font-size:clamp(5.5rem,14vw,10rem); line-height:.8; letter-spacing:-.03em}
+.urgent .h72 small{display:block; font-size:1rem; letter-spacing:.14em; text-transform:uppercase; font-stretch:100%; margin-top:10px; font-weight:700}
+.urgent h2{color:#fff; font-size:clamp(1.8rem,4.4vw,2.8rem); margin-bottom:14px}
+.urgent p{margin:0 0 8px; font-size:1.15rem; max-width:60ch}
+.urgent a{color:#fff; font-weight:700}
+@media (max-width:760px){ .urgent .wrap{grid-template-columns:1fr; gap:14px} }
+
+.ways{display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:44px; border-top:2px solid var(--ink)}
+.way{padding:26px 24px 26px 0; border-bottom:1px solid var(--line)}
+.way:not(:nth-child(3n+1)){padding-left:24px; border-left:1px solid var(--line)}
+.way .n{font-family:var(--head); font-weight:900; font-stretch:80%; color:var(--redText); font-size:1rem; letter-spacing:.1em}
+.way h3{margin:6px 0 8px}
+.way p{margin:0}
+@media (max-width:860px){ .ways{grid-template-columns:1fr 1fr} .way{padding:22px 14px 22px 0 !important; border-left:0 !important} .way:nth-child(even){padding-left:14px !important; border-left:1px solid var(--line) !important} }
+@media (max-width:520px){ .ways{grid-template-columns:1fr} .way{padding:22px 0 !important; border-left:0 !important} }
+
+.duo{display:grid; grid-template-columns:1.3fr 1fr; gap:16px; margin-top:44px}
+.duo figure{margin:0; position:relative}
+.duo img{width:100%; height:100%; aspect-ratio:3/2; object-fit:cover}
+.duo figcaption{font-size:.95rem; color:var(--text); margin-top:10px}
+@media (max-width:760px){ .duo{grid-template-columns:1fr} }
+
+.guide{margin-top:64px; background:var(--bg2); padding:40px}
+.guide h3{font-size:clamp(1.7rem,3.6vw,2.4rem); margin-bottom:8px}
+.guide > p{color:var(--mute); margin-bottom:24px}
+.path{list-style:none; margin:0; padding:0; display:grid; gap:12px}
+.path li{display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1.25fr); gap:18px; align-items:center; background:var(--bg); padding:18px 20px; border-left:6px solid var(--ink)}
+.path li.first{border-left-color:var(--red)}
+.path .if{font-weight:700; color:var(--ink)}
+.path .arrow{font-family:var(--head); font-weight:900; font-size:1.6rem; color:var(--redText)}
+.path .then strong{color:var(--ink)}
+.guide .fine{margin:18px 0 0; font-size:.9rem; color:var(--mute)}
+@media (max-width:760px){ .guide{padding:28px 18px} .path li{grid-template-columns:1fr; gap:4px} .path .arrow{transform:rotate(90deg); justify-self:start; line-height:1} }
+
+/* ===== tratamento ===== */
+.treat{display:grid; grid-template-columns:1fr 1fr; gap:64px; margin-top:48px; align-items:start}
+.treat figure{margin:0; position:sticky; top:96px}
+.treat figure img{width:100%; aspect-ratio:4/5; object-fit:cover}
+.tl{list-style:none; margin:0; padding:0; counter-reset:s}
+.tl li{position:relative; padding:0 0 34px 76px; counter-increment:s}
+.tl li::before{content:counter(s); position:absolute; left:0; top:-6px; font-family:var(--head); font-weight:900; font-stretch:70%; font-size:3.2rem; line-height:1; color:var(--redText); width:56px; text-align:center}
+.tl li::after{content:""; position:absolute; left:27px; top:52px; bottom:6px; width:2px; background:var(--line)}
+.tl li:last-child::after{display:none}
+.tl h3{margin-bottom:6px}
+.tl p{margin:0}
+@media (max-width:860px){ .treat{grid-template-columns:1fr; gap:36px} .treat figure{position:relative; top:0} .treat figure img{aspect-ratio:3/2} .tl li{padding-left:64px} .tl li::before{width:46px; font-size:2.7rem} .tl li::after{left:22px} }
+
+.ii{background:var(--sun); color:#17120F; padding:72px 0}
+.ii .wrap{display:grid; grid-template-columns:auto 1fr; gap:48px; align-items:center}
+.ii .eq{font-family:var(--head); font-weight:900; font-stretch:68%; font-size:clamp(5rem,15vw,11rem); line-height:.8; letter-spacing:-.04em; color:#17120F; white-space:nowrap}
+.ii h2{color:#17120F; font-size:clamp(2rem,4.6vw,3.2rem); margin-bottom:14px}
+.ii p{font-size:1.2rem; margin:0; max-width:52ch}
+@media (max-width:760px){ .ii .wrap{grid-template-columns:1fr; gap:18px} }
+
+/* ===== preconceito ===== */
+.stigma-hero{position:relative; min-height:78vh; display:flex; align-items:flex-end; color:#fff; padding:0}
+.stigma-hero > img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.stigma-hero::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,8,7,.15) 0%, rgba(10,8,7,.88) 85%)}
+.stigma-hero .wrap{position:relative; z-index:2; padding-top:140px; padding-bottom:64px; width:100%}
+.stigma-hero h2{color:#fff; font-size:clamp(2.8rem,8vw,6.2rem); font-weight:900; font-stretch:70%; max-width:14ch; line-height:.95}
+.stigma-hero h2 span{color:#FF8A96}
+.stigma-hero p{font-size:1.25rem; max-width:52ch; margin-top:22px; color:#F1ECE8}
+.three{display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:8px}
+.three > div{border-top:4px solid var(--ink); padding-top:20px}
+.three h3{margin-bottom:10px}
+.three p{margin:0}
+@media (max-width:860px){ .three{grid-template-columns:1fr; gap:30px} }
+.words{margin-top:64px}
+.words h3{font-size:clamp(1.7rem,3.6vw,2.4rem); margin-bottom:22px}
+.wtable{width:100%; border-collapse:collapse; font-size:1.1rem}
+.wtable th{font-family:var(--head); text-transform:uppercase; letter-spacing:.12em; font-size:.8rem; text-align:left; padding:0 0 12px; color:var(--mute); font-stretch:100%}
+.wtable td{padding:16px 16px 16px 0; border-top:1px solid var(--line); vertical-align:top}
+.wtable td:first-child{color:var(--mute); text-decoration:line-through; text-decoration-color:var(--red); text-decoration-thickness:2px; width:42%}
+.wtable td:last-child{color:var(--ink); font-weight:700}
+@media (max-width:560px){
+  .wtable thead{display:none}
+  .wtable tr{display:block; border-top:1px solid var(--line); padding:14px 0}
+  .wtable td{display:block; border:0; padding:0; width:auto !important}
+  .wtable td:last-child::before{content:"→ "; color:var(--redText)}
+}
+
+/* ===== apoiar ===== */
+.support{display:grid; grid-template-columns:.9fr 1.1fr; gap:56px; margin-top:44px; align-items:start}
+.support figure{margin:0}
+.support figure img{width:100%; aspect-ratio:4/5; object-fit:cover; object-position:50% 25%}
+.lists{display:grid; grid-template-columns:1fr 1fr; gap:32px}
+.lists h3{font-size:1rem; text-transform:uppercase; letter-spacing:.14em; font-stretch:100%; padding-bottom:12px; border-bottom:3px solid; margin-bottom:4px}
+.do h3{color:#1B7F45; border-color:#1B7F45}
+.dont h3{color:var(--redText); border-color:var(--red)}
+.lists ul{list-style:none; padding:0; margin:0}
+.lists li{padding:14px 0; border-bottom:1px solid var(--line)}
+@media (max-width:860px){ .support{grid-template-columns:1fr; gap:32px} .support figure img{aspect-ratio:3/2} }
+@media (max-width:560px){ .lists{grid-template-columns:1fr} }
+[data-theme="dark"] .do h3{color:#4CC77E; border-color:#4CC77E}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .do h3{color:#4CC77E; border-color:#4CC77E} }
+
+/* ===== ajuda ===== */
+.help-top{position:relative; color:#fff; padding:0; min-height:440px; display:flex; align-items:flex-end}
+.help-top > img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.help-top::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(6,40,48,.2), rgba(6,40,48,.9))}
+.help-top .wrap{position:relative; z-index:2; padding-top:120px; padding-bottom:48px; width:100%}
+.help-top h2{color:#fff}
+.help-top .kicker{color:var(--sun)}
+.places{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:-1px}
+.place{padding:28px; background:var(--bg2); border-top:4px solid var(--sea)}
+.place.urg{border-top-color:var(--red)}
+.place h3{margin-bottom:8px}
+.place p{margin:0}
+.place .tel{display:inline-block; margin-top:12px; font-family:var(--head); font-weight:900; font-stretch:75%; font-size:2.6rem; color:var(--ink); text-decoration:none; line-height:1}
+.place.todo{background:transparent; border:2px dashed var(--line); border-top:4px dashed var(--mute)}
+.place.todo h3, .place.todo p{color:var(--mute)}
+@media (max-width:760px){ .places{grid-template-columns:1fr} .place{padding:22px 18px} }
+.share{margin-top:48px; display:flex; flex-wrap:wrap; gap:20px 32px; align-items:center; justify-content:space-between; border-top:2px solid var(--ink); padding-top:32px}
+.share p{margin:0; font-family:var(--head); font-weight:800; font-stretch:80%; font-size:clamp(1.6rem,3.6vw,2.3rem); color:var(--ink); line-height:1.1; max-width:22ch}
+.wa.big{height:auto; padding:18px 26px; font-size:1.1rem; border-radius:8px}
+
+/* ===== rodapé ===== */
+footer{background:var(--dark); color:var(--onDarkMute); padding:64px 0 40px; font-size:.95rem}
+footer h2{color:#fff; font-size:1.4rem; font-stretch:90%; margin-bottom:14px}
+footer a{color:#fff}
+.fgrid{display:grid; grid-template-columns:1.1fr 1fr; gap:48px}
+.warn{color:#fff; font-size:1.1rem; border-left:4px solid var(--sun); padding-left:16px; margin-bottom:28px}
+.ph{color:var(--sun)}
+footer ol, footer ul{padding-left:18px; margin:0}
+footer li{margin-bottom:8px; line-height:1.45}
+.credits{margin-top:40px; padding-top:24px; border-top:1px solid #3A3330; font-size:.8rem; line-height:1.5}
+@media (max-width:860px){ .fgrid{grid-template-columns:1fr; gap:36px} }
+
+/* entrada suave */
+.js .rv{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease}
+.js .rv.in{opacity:1; transform:none}
+@media (prefers-reduced-motion: reduce){ .rv{opacity:1; transform:none; transition:none} html{scroll-behavior:auto} }
+@media (max-width:640px){ section{padding:64px 0} .lead{font-size:1.15rem} }
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<div class="notice"><b>Site educativo.</b> Não substitui consulta. Dúvidas: UBS ou <a href="tel:136">Disque Saúde 136</a> (grátis).</div>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="#inicio" aria-label="Sem Medo de Saber, início">
+      <svg width="22" height="30" viewBox="0 0 22 30" aria-hidden="true"><path d="M11 2c4.2 0 6.6 3 6.6 6.4 0 3.3-2.3 6.4-4.6 9.6l7 10-3 2-6-8.6-6 8.6-3-2 7-10C6.7 14.8 4.4 11.7 4.4 8.4 4.4 5 6.8 2 11 2Zm0 3.2c-2 0-3.3 1.4-3.3 3.2 0 1.9 1.4 4 3.3 6.7 1.9-2.7 3.3-4.8 3.3-6.7 0-1.8-1.3-3.2-3.3-3.2Z" fill="#D0213A"/></svg>
+      Sem Medo de Saber
+    </a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#basico">O básico</a><a href="#transmissao">Como passa</a><a href="#mitos">Mitos</a><a href="#prevencao">Prevenção</a><a href="#tratamento">Tratamento</a><a href="#preconceito">Preconceito</a><a href="#ajuda">Onde ir</a>
+    </nav>
+    <div class="tools">
+      <button class="tbtn" id="aplus" type="button" aria-label="Aumentar a letra">A+</button>
+      <button class="tbtn" id="theme" type="button" aria-label="Trocar entre modo claro e escuro">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="wa js-share" type="button"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.2.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1 2.7 11.4 11.4 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3Z"/></svg><span class="wtxt">Compartilhar</span></button>
+    </div>
+  </div>
+  <div class="navrow"><nav class="nav" aria-label="Seções">
+    <a href="#basico">O básico</a><a href="#transmissao">Como passa</a><a href="#mitos">Mitos</a><a href="#prevencao">Prevenção</a><a href="#tratamento">Tratamento</a><a href="#preconceito">Preconceito</a><a href="#ajuda">Onde ir</a>
+  </nav></div>
+</header>
+
+<main id="conteudo">
+
+<!-- 1. ABERTURA -->
+<section class="hero on-dark" id="inicio">
+  <div class="txt">
+    <div class="where">São José de Ribamar · Maranhão</div>
+    <h1>HIV hoje <span class="no">não&nbsp;é</span> o HIV de antigamente.</h1>
+    <p>Quem vive com HIV e faz o tratamento pode ter uma vida longa, trabalhar, namorar e ter filhos sem HIV. E, com o vírus controlado, <strong>não passa o HIV para ninguém</strong> numa relação sexual.</p>
+    <p>O que ainda machuca muito é o <span class="hl">preconceito</span>.</p>
+    <div class="btns">
+      <a class="btn primary" href="#basico">Entender o que é o HIV ↓</a>
+      <a class="btn ghost" href="#ajuda">Onde fazer o teste grátis</a>
+    </div>
+  </div>
+  <figure>
+    <img src="img/hero.jpg" width="1600" height="2400" alt="Jovens sorrindo com roupas coloridas do Boi da Maioba, em São Luís" fetchpriority="high">
+    <figcaption class="credit on-photo">Boi da Maioba, São Luís (MA). Foto: Clarycepb, CC BY-SA 4.0</figcaption>
+  </figure>
+</section>
+
+<!-- 2. EM NÚMEROS -->
+<section id="numeros">
+  <div class="wrap">
+    <div class="kicker">Em números</div>
+    <h2 class="rv">O Brasil avançou muito.</h2>
+    <div class="nums">
+      <div class="num rv"><div class="big">≈ 1 milhão</div><p>de pessoas vivem com HIV no Brasil. Pode ser seu vizinho, seu colega ou alguém da sua família.</p><div class="src">Ministério da Saúde (estimativa)</div></div>
+      <div class="num rv"><div class="big">Menor</div><p>número de mortes por aids de toda a história do país, graças ao tratamento gratuito.</p><div class="src">Boletim Epidemiológico HIV/Aids, dez/2025</div></div>
+      <div class="num rv"><div class="big">0</div><p>Na prática, o Brasil eliminou a passagem do HIV da mãe para o bebê. Com pré-natal e tratamento, o bebê nasce sem o vírus.</p><div class="src">Ministério da Saúde, 2025</div></div>
+      <div class="num rv"><div class="big">+120 mil</div><p>pessoas já usam a PrEP, um remédio grátis do SUS que <strong>evita</strong> pegar HIV.</p><div class="src">Ministério da Saúde, 2025</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="band on-dark" aria-label="O Maranhão e os jovens">
+  <img src="img/jovens.jpg" width="1600" height="1067" alt="Estudantes de ensino médio, de uniforme, prestando atenção numa palestra" loading="lazy">
+  <div class="wrap">
+    <h2 class="rv">Mas o Maranhão é o 4º estado do Nordeste em novos casos.</h2>
+    <p class="rv">E o número está subindo entre os <span class="hl">jovens</span>. Informação é a nossa melhor proteção.</p>
+    <p class="credit" style="color:rgba(255,255,255,.7)">Foto ilustrativa: Universidade de Brasília, CC BY 2.0</p>
+  </div>
+</section>
+
+<!-- 3. O BÁSICO -->
+<section id="basico">
+  <div class="wrap">
+    <div class="kicker">O básico</div>
+    <h2 class="rv">HIV e aids não são a mesma coisa.</h2>
+    <div class="split rv">
+      <div>
+        <div class="word">HIV<small>é o vírus</small></div>
+        <p>Ele ataca as células de defesa do corpo, aquelas que lutam contra as doenças. A pessoa pode passar anos <strong>sem sentir nada</strong>. Por isso, só o teste mostra se a pessoa tem HIV.</p>
+      </div>
+      <div>
+        <div class="word">aids<small>é a fase avançada</small></div>
+        <p>Ela aparece quando o HIV fica muitos anos <strong>sem tratamento</strong> e as defesas do corpo enfraquecem. Quem descobre cedo e se trata <strong>não chega à aids</strong>.</p>
+      </div>
+    </div>
+    <div class="analogy rv">
+      <div class="q" aria-hidden="true">“</div>
+      <div>
+        <h3>Pense numa casa com seguranças.</h3>
+        <p>O HIV é um ladrão. As defesas do corpo são os seguranças da casa.</p>
+        <div class="steps2">
+          <div><b>Sem tratamento</b>o ladrão vai derrubando os seguranças, um por um.</div>
+          <div><b>Com o remédio</b>o ladrão fica preso, e os seguranças voltam ao trabalho.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. COMO PASSA -->
+<section id="transmissao" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="kicker">Transmissão</div>
+    <h2 class="rv">Como o HIV passa. E como <span class="hl">não</span> passa.</h2>
+    <div class="tx">
+      <div class="yes rv">
+        <h3>Pode passar por</h3>
+        <ul>
+          <li>Sexo sem camisinha<span>vaginal, anal ou oral</span></li>
+          <li>Compartilhar seringa ou agulha</li>
+          <li>Da mãe para o bebê<span>na gravidez, no parto ou na amamentação, quando não há tratamento</span></li>
+          <li>Transfusão de sangue<span>muito raro no Brasil, porque todo sangue doado é testado</span></li>
+        </ul>
+      </div>
+      <div class="no rv">
+        <h3>Não passa por</h3>
+        <div class="chips">
+          <span class="chip">Beijo</span><span class="chip">Abraço</span><span class="chip">Aperto de mão</span><span class="chip">Suor</span><span class="chip">Lágrima</span><span class="chip">Saliva</span><span class="chip">Copo</span><span class="chip">Prato</span><span class="chip">Talher</span><span class="chip">Toalha</span><span class="chip">Banheiro</span><span class="chip">Piscina</span><span class="chip">Rede</span><span class="chip">Mosquito</span>
+        </div>
+        <p class="note">Pode <strong>morar junto, cuidar e conviver</strong> com quem vive com HIV sem nenhum medo.</p>
+        <figure class="photo-inline">
+          <img src="img/brincante.jpg" width="1600" height="2400" alt="Senhor sorrindo, com chapéu bordado, numa festa de bumba meu boi" loading="lazy">
+          <figcaption class="credit on-photo">Foto ilustrativa: Clarycepb, CC BY-SA 4.0</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. MITOS E VERDADES -->
+<section id="mitos">
+  <div class="wrap">
+    <div class="kicker">Mitos e verdades</div>
+    <h2 class="rv">Coisas que todo mundo já ouviu falar.</h2>
+    <div class="myths">
+      <div class="myth rv"><span class="tag m">Mito</span><div><h3>“O HIV pode passar pelo beijo.”</h3><p>Saliva não transmite HIV. Pode beijar, abraçar e dividir o copo sem medo.</p></div></div>
+      <div class="myth rv"><span class="tag m">Mito</span><div><h3>“Mosquito pode transmitir HIV.”</h3><p>O HIV não sobrevive no mosquito. Pernilongo não passa HIV.</p></div></div>
+      <div class="myth rv"><span class="tag m">Mito</span><div><h3>“Quem tem HIV tem aids.”</h3><p>HIV é o vírus. Aids é a fase avançada, que só aparece sem tratamento. Quem se trata não chega à aids.</p></div></div>
+      <div class="myth rv"><span class="tag v">Verdade</span><div><h3>“Quem se trata e está indetectável não transmite o HIV no sexo.”</h3><p>Foi comprovado por grandes estudos: indetectável = intransmissível.</p></div></div>
+      <div class="myth rv"><span class="tag v">Verdade</span><div><h3>“Existe remédio para tomar logo depois de uma relação de risco.”</h3><p>É a PEP. Precisa começar em até 72 horas e é grátis no SUS.</p></div></div>
+      <div class="myth rv"><span class="tag m">Mito</span><div><h3>“O teste de HIV é pago e demora semanas.”</h3><p>O teste rápido é grátis no posto e o resultado sai em cerca de 30 minutos.</p></div></div>
+      <div class="myth rv"><span class="tag v">Verdade</span><div><h3>“Uma mulher que vive com HIV pode ter um bebê sem HIV.”</h3><p>Com pré-natal e tratamento, o bebê nasce sem o vírus. O Brasil praticamente eliminou essa transmissão.</p></div></div>
+      <div class="myth rv"><span class="tag m">Mito</span><div><h3>“A empresa pode exigir teste de HIV para contratar.”</h3><p>Isso é proibido. E discriminar uma pessoa por ter HIV é crime (Lei 12.984/2014).</p></div></div>
+      <div class="myth rv"><span class="tag m">Mito</span><div><h3>“Só homens gays pegam HIV.”</h3><p>Qualquer pessoa que tem relações sexuais pode ter HIV. Cerca de 3 em cada 10 novos casos são em mulheres.</p></div></div>
+      <div class="myth rv"><span class="tag m">Mito</span><div><h3>“Já existe cura para o HIV.”</h3><p>Ainda não existe cura. Mas o tratamento controla o vírus e garante uma vida longa e saudável.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. PREVENÇÃO -->
+<div id="prevencao"></div>
+<section class="urgent on-dark" aria-label="Urgência: PEP">
+  <div class="wrap">
+    <div class="h72 rv">72h<small>é o prazo da PEP</small></div>
+    <div class="rv">
+      <h2>Aconteceu algo agora? A camisinha estourou? Houve violência sexual?</h2>
+      <p>Existe a <strong>PEP</strong>, um remédio de urgência que impede o HIV de se instalar. É preciso começar <strong>em até 72 horas</strong>, e quanto antes, melhor. O tratamento dura 28 dias.</p>
+      <p>Procure <strong>hoje</strong> uma UPA, um hospital ou o serviço de HIV do município. Dúvidas: <a href="tel:136">Disque Saúde 136</a> (ligação grátis).</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="t-prev">
+  <div class="wrap">
+    <div class="kicker">Prevenção combinada</div>
+    <h2 id="t-prev" class="rv">Hoje existem vários jeitos de se proteger. Todos são grátis no SUS.</h2>
+    <p class="lead rv" style="margin-top:20px">Não existe um jeito só. Cada pessoa escolhe o que combina com a vida dela, e pode usar mais de um.</p>
+    <div class="ways">
+      <div class="way rv"><div class="n">01</div><h3>Camisinha</h3><p>Masculina ou feminina. Protege do HIV, da sífilis e de outras infecções. É grátis nos postos de saúde.</p></div>
+      <div class="way rv"><div class="n">02</div><h3>Teste rápido</h3><p>Usa uma gotinha de sangue do dedo, e o resultado sai em cerca de 30 minutos. Se teve risco há menos de 30 dias, repita o teste depois.</p></div>
+      <div class="way rv"><div class="n">03</div><h3>PrEP (antes)</h3><p>Remédio tomado <strong>antes</strong> para não pegar HIV. É para quem tem mais chance de contato com o vírus, a partir dos 15 anos. Já foi anunciada uma versão injetável para o SUS.</p></div>
+      <div class="way rv"><div class="n">04</div><h3>PEP (depois)</h3><p>Remédio de urgência tomado <strong>depois</strong> de um risco. Tem que começar em até 72 horas e dura 28 dias.</p></div>
+      <div class="way rv"><div class="n">05</div><h3>Pré-natal</h3><p>Toda gestante faz o teste. Se der reagente, o tratamento protege o bebê.</p></div>
+      <div class="way rv"><div class="n">06</div><h3>Tratar é prevenir</h3><p>Quem vive com HIV, se trata e fica com o vírus indetectável <strong>não transmite</strong> o HIV no sexo.</p></div>
+    </div>
+
+    <div class="duo">
+      <figure class="rv">
+        <img src="img/teste-dedo.jpg" width="1600" height="1066" alt="Profissional de saúde de luvas fazendo o teste rápido com uma gota de sangue do dedo" loading="lazy">
+        <figcaption><strong>O teste rápido é assim:</strong> uma picadinha no dedo, e em cerca de 30 minutos você sabe o resultado.<span class="credit" style="display:block">Foto: Giovanna Rosito / SMS Curitiba</span></figcaption>
+      </figure>
+      <figure class="rv">
+        <img src="img/prep.jpg" width="1600" height="1058" alt="Comprimidos azuis da PrEP sobre uma mesa" loading="lazy">
+        <figcaption><strong>Isto é a PrEP:</strong> um comprimido que evita pegar o HIV.<span class="credit" style="display:block">Foto: NIAID, CC BY 2.0</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="guide rv">
+      <h3>Qual proteção combina com você?</h3>
+      <p>Veja qual situação parece com a sua. Serve para você saber o que pedir no posto.</p>
+      <ol class="path">
+        <li class="first"><span class="if">Teve uma relação de risco nos últimos 3 dias?</span><span class="arrow" aria-hidden="true">→</span><span class="then"><strong>PEP, hoje.</strong> Vá a uma UPA ou a um hospital. O remédio precisa começar em até 72 horas.</span></li>
+        <li><span class="if">Nunca fez o teste, ou não fez no último ano?</span><span class="arrow" aria-hidden="true">→</span><span class="then"><strong>Teste rápido</strong> no posto. É o primeiro passo e é grátis.</span></li>
+        <li><span class="if">Usa camisinha só às vezes, ou quase nunca?</span><span class="arrow" aria-hidden="true">→</span><span class="then">Pergunte no posto se a <strong>PrEP</strong> é indicada para você.</span></li>
+        <li><span class="if">Para todo mundo</span><span class="arrow" aria-hidden="true">→</span><span class="then"><strong>Camisinha</strong>, que também protege de sífilis e de outras infecções.</span></li>
+        <li><span class="if">Já usa camisinha sempre e fez o teste este ano?</span><span class="arrow" aria-hidden="true">→</span><span class="then">Você já se cuida bem. Continue fazendo o teste <strong>uma vez por ano</strong>.</span></li>
+      </ol>
+      <p class="fine">Sugestão educativa. Quem decide junto com você é o profissional de saúde.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. TRATAMENTO -->
+<section id="tratamento" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="kicker">Depois do diagnóstico</div>
+    <h2 class="rv">O teste deu reagente. E agora?</h2>
+    <p class="lead rv" style="margin-top:20px">Primeiro, respire. Hoje o HIV é uma condição de saúde que se controla, como pressão alta ou diabetes. Veja o caminho:</p>
+    <div class="treat">
+      <ol class="tl">
+        <li class="rv"><h3>Confirmar</h3><p>A equipe de saúde faz outro exame para confirmar. O resultado é <strong>sigiloso</strong>: ninguém pode contar para a sua família ou para o seu patrão.</p></li>
+        <li class="rv"><h3>Ser acompanhado</h3><p>Você é encaminhado ao serviço especializado (SAE), com médico, enfermagem e psicólogo. Tudo pelo SUS.</p></li>
+        <li class="rv"><h3>Começar o remédio</h3><p>São poucos comprimidos por dia, grátis desde 1996. Quanto antes começar, melhor.</p></li>
+        <li class="rv"><h3>Ficar indetectável</h3><p>Em alguns meses, o vírus fica tão baixo que o exame nem consegue achar. Isso se chama <strong>carga viral indetectável</strong>.</p></li>
+        <li class="rv"><h3>Seguir a vida</h3><p>Trabalhar, estudar, namorar, ter filhos sem HIV. O segredo é <strong>não parar o remédio</strong> e ir às consultas.</p></li>
+      </ol>
+      <figure class="rv">
+        <img src="img/testagem.jpg" width="1600" height="1066" alt="Equipe de saúde atendendo pessoas em uma ação de testagem" loading="lazy">
+        <figcaption class="credit">Ação de testagem no Dia Mundial de Luta contra a Aids. Foto: Cristine Rochol / PMPA</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="ii" aria-label="Indetectável igual a intransmissível">
+  <div class="wrap">
+    <div class="eq rv" aria-hidden="true">I = I</div>
+    <div class="rv">
+      <h2>Indetectável = Intransmissível.</h2>
+      <p>Quem se trata e mantém o vírus indetectável <strong>não transmite o HIV</strong> por relação sexual. Isso foi comprovado por grandes estudos científicos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8. PRECONCEITO -->
+<section class="stigma-hero on-dark" id="preconceito">
+  <img src="img/laco.jpg" width="1600" height="1074" alt="Centenas de pessoas de camiseta vermelha formando um grande laço vermelho num gramado" loading="lazy">
+  <div class="wrap">
+    <h2 class="rv">O vírus tem remédio. <span>O preconceito ainda não.</span></h2>
+    <p class="rv">Muita gente <strong>deixa de fazer o teste</strong> por medo do que os outros vão pensar. E muita gente que tem HIV <strong>para o tratamento</strong> por vergonha. Por isso o preconceito também adoece.</p>
+    <p class="credit" style="color:rgba(255,255,255,.7)">Laço humano no Dia Mundial de Luta contra a Aids, Brasília. Foto: Agência Brasil, CC BY 3.0 BR</p>
+  </div>
+</section>
+
+<section aria-label="Direitos">
+  <div class="wrap">
+    <div class="three">
+      <div class="rv"><h3>Não é doença “de um grupo”</h3><p>Qualquer pessoa que tem relações sexuais pode ter HIV: homem, mulher, jovem, idoso, casado ou solteiro. Hoje, cerca de 3 em cada 10 novos casos são em mulheres.</p></div>
+      <div class="rv"><h3>Discriminar é crime</h3><p>A <strong>Lei 12.984/2014</strong> pune quem demite, recusa matrícula, nega emprego ou expõe alguém por ter HIV. A pena é de 1 a 4 anos de prisão.</p></div>
+      <div class="rv"><h3>Seu emprego é protegido</h3><p>A empresa <strong>não pode exigir</strong> teste de HIV para contratar ou demitir (Portaria 1.246/2010 do Ministério do Trabalho).</p></div>
+    </div>
+    <div class="words rv">
+      <h3>Palavras que machucam × palavras que acolhem</h3>
+      <table class="wtable">
+        <thead><tr><th>Em vez de…</th><th>Diga…</th></tr></thead>
+        <tbody>
+          <tr><td>“aidético”</td><td>pessoa que vive com HIV</td></tr>
+          <tr><td>“contaminado”, “contaminou”</td><td>tem HIV, transmitiu</td></tr>
+          <tr><td>“grupo de risco”</td><td>situação de risco: qualquer pessoa pode passar por uma</td></tr>
+          <tr><td>“pegou porque quis”</td><td>sem julgamento: ninguém merece adoecer</td></tr>
+          <tr><td>“sentença de morte”</td><td>condição de saúde que tem tratamento</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- 9. COMO APOIAR -->
+<section id="apoiar" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="kicker">Como apoiar</div>
+    <h2 class="rv">Alguém te contou que vive com HIV? Veja como ajudar.</h2>
+    <div class="support">
+      <figure class="rv">
+        <img src="img/senhora.jpg" width="1600" height="2400" alt="Senhora sorrindo, com chapéu colorido de fitas do Boi da Maioba" loading="lazy">
+        <figcaption class="credit">Foto ilustrativa: Clarycepb, CC BY-SA 4.0</figcaption>
+      </figure>
+      <div class="lists">
+        <div class="do rv"><h3>Faça</h3><ul>
+          <li>Agradeça a confiança</li>
+          <li>Escute mais do que fala</li>
+          <li>Guarde o segredo: a história é dela</li>
+          <li>Continue abraçando e dividindo a mesa</li>
+          <li>Ofereça companhia na consulta</li>
+        </ul></div>
+        <div class="dont rv"><h3>Evite</h3><ul>
+          <li>Perguntar “como você pegou?”</li>
+          <li>Separar copo, prato ou toalha (não precisa!)</li>
+          <li>Contar para outras pessoas</li>
+          <li>Tratar como alguém que vai morrer</li>
+          <li>Dar sermão</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. ONDE BUSCAR AJUDA -->
+<section class="help-top on-dark" id="ajuda">
+  <img src="img/ribamar.jpg" width="1600" height="1200" alt="Cais de São José de Ribamar, com o mar e o píer de pedras" loading="lazy">
+  <div class="wrap">
+    <div class="kicker">Onde buscar ajuda</div>
+    <h2 class="rv">Em São José de Ribamar, o cuidado é grátis e sigiloso.</h2>
+    <p class="credit" style="color:rgba(255,255,255,.7)">Cais de São José de Ribamar. Foto: Ramsesmagno, CC BY-SA 4.0</p>
+  </div>
+</section>
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="places">
+      <div class="place rv"><h3>Posto de saúde (UBS)</h3><p>Vá à Unidade Básica de Saúde mais perto da sua casa e peça o <strong>teste rápido</strong> e camisinhas. É grátis e sigiloso.</p></div>
+      <div class="place urg rv"><h3>Urgência: PEP</h3><p>Teve risco nos últimos 3 dias? Vá a uma UPA ou a um hospital <strong>hoje</strong> e peça a PEP.</p></div>
+      <div class="place rv"><h3>Disque Saúde</h3><p>Ligação gratuita para tirar dúvidas e saber onde fica o serviço mais perto de você.</p><a class="tel" href="tel:136">136</a></div>
+      <div class="place todo rv"><h3>Serviço especializado (SAE/CTA)</h3><p>Endereço, horário e telefone do serviço do município: em confirmação com a Secretaria Municipal de Saúde.</p></div>
+    </div>
+    <div class="share">
+      <p>Aprendeu algo novo? Mande para quem você ama.</p>
+      <button class="wa big js-share" type="button"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.2.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1 2.7 11.4 11.4 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.3Z"/></svg>Compartilhar no WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- 11. RODAPÉ -->
+<footer>
+  <div class="wrap">
+    <p class="warn">Este site é <strong>educativo</strong> e não substitui consulta. Em caso de dúvida sobre sua saúde, procure a UBS ou ligue 136.</p>
+    <div class="fgrid">
+      <div>
+        <h2>Sobre o projeto</h2>
+        <p>Projeto de Intervenção Coletiva do curso de Medicina — <span class="ph">[nome da instituição]</span>. Equipe: <span class="ph">[nomes dos estudantes]</span>. Orientação: <span class="ph">[professor(a) orientador(a)]</span>.</p>
+        <p>Feito para a comunidade de São José de Ribamar (MA).</p>
+        <p><strong style="color:#fff">Sua privacidade:</strong> este site não usa cookies e não coleta nenhum dado seu.</p>
+      </div>
+      <div>
+        <h2>Fontes</h2>
+        <ul>
+          <li><a href="https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/boletins/epidemiologicos/especiais/2025/boletim-epidemiologico-de-hiv-e-aids-numero-especial-dez-2025.pdf">Boletim Epidemiológico HIV/Aids, Ministério da Saúde, dez/2025</a></li>
+          <li><a href="https://portal.afya.com.br/saude/brasil-elimina-transmissao-vertical-do-hiv-e-registra-menor-mortalidade-em-32-anos">Brasil elimina a transmissão vertical do HIV (Afya, 2025)</a></li>
+          <li><a href="https://agenciagov.ebc.com.br/noticias/202607/brasil-vai-ampliar-prevencao-do-hiv-com-oferta-de-prep-injetavel-de-longa-duracao-no-sus">PrEP injetável no SUS (Agência Gov, jul/2026)</a></li>
+          <li><a href="https://www.brasildefato.com.br/2025/09/25/mulheres-sao-88-das-usuarias-da-prep-embora-concentrem-30-dos-novos-casos-de-hiv/">Mulheres e novos casos de HIV (Brasil de Fato, 2025)</a></li>
+          <li><a href="https://oimparcial.com.br/noticias/2025/12/maranhao-e-o-4o-do-nordeste-em-novos-casos-de-hiv-aids/">Maranhão: 4º do Nordeste em novos casos (O Imparcial, 2025)</a></li>
+          <li>Indetectável = Intransmissível: estudos PARTNER2 (The Lancet, 2019) e HPTN 052 (NEJM, 2016)</li>
+          <li>PCDTs de PEP e PrEP, Ministério da Saúde</li>
+          <li>Lei 9.313/1996 · Lei 12.984/2014 · Portaria MTE 1.246/2010</li>
+        </ul>
+      </div>
+    </div>
+    <div class="credits">
+      <strong style="color:#fff">Fotos.</strong> Imagens reais do Wikimedia Commons, usadas conforme suas licenças. As fotos de pessoas são <strong>ilustrativas</strong>: as pessoas retratadas não têm nenhuma relação com o tema do HIV.
+      Boi da Maioba (abertura, transmissão, apoio): Clarycepb, CC BY-SA 4.0 · Estudantes: Universidade de Brasília, CC BY 2.0 · Teste rápido: Giovanna Rosito / SMS Curitiba · PrEP: NIAID, CC BY 2.0 · Testagem: Cristine Rochol / PMPA · Laço humano: Agência Brasil, CC BY 3.0 BR · Cais de Ribamar: Ramsesmagno, CC BY-SA 4.0.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  root.classList.add('js');
+  // Letra maior: 3 tamanhos, alterna a cada toque (nada é salvo)
+  var size = 0;
+  document.getElementById('aplus').addEventListener('click', function(){
+    size = (size + 1) % 3;
+    root.classList.remove('a1','a2');
+    if (size) root.classList.add('a' + size);
+    this.textContent = size === 2 ? 'A−' : 'A+';
+    this.setAttribute('aria-label', size === 2 ? 'Voltar ao tamanho normal da letra' : 'Aumentar a letra');
+  });
+  // Modo claro / escuro
+  document.getElementById('theme').addEventListener('click', function(){
+    var dark = root.getAttribute('data-theme') === 'dark' ||
+      (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    root.setAttribute('data-theme', dark ? 'light' : 'dark');
+  });
+  // Compartilhar no WhatsApp
+  var msg = 'Aprendi coisas sobre HIV que eu não sabia. Dá uma olhada: ' + location.href.split('#')[0];
+  document.querySelectorAll('.js-share').forEach(function(b){
+    b.addEventListener('click', function(){ window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener'); });
+  });
+  // Entrada suave ao rolar
+  var els = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {rootMargin:'0px 0px -8% 0px'});
+    els.forEach(function(el){ io.observe(el); });
+  } else { els.forEach(function(el){ el.classList.add('in'); }); }
+})();
+</script>
+</body>
+</html>
