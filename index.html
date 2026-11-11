@@ -14,6 +14,7 @@
 <meta name="theme-color" content="#17120F">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -332,6 +333,40 @@ header.top{position:sticky; top:0; z-index:50; background:var(--bg); border-bott
 .place.todo{background:transparent; border:2px dashed var(--line); border-top:4px dashed var(--mute)}
 .place.todo h3, .place.todo p{color:var(--mute)}
 @media (max-width:760px){ .places{grid-template-columns:1fr} .place{padding:22px 18px} }
+.mapblock{margin-top:56px}
+.maphead{display:flex; flex-wrap:wrap; gap:18px 32px; align-items:flex-end; justify-content:space-between; margin-bottom:14px}
+.maphead h3{font-size:clamp(1.6rem,3.4vw,2.3rem); margin-bottom:12px}
+.legend{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:8px 20px; font-size:.95rem}
+.legend li{display:flex; align-items:center; gap:8px}
+.dot{display:inline-block; width:14px; height:14px; border-radius:50%; border:2px solid #fff; box-shadow:0 0 0 1px rgba(0,0,0,.35)}
+.dot.ubs{background:#0B5566} .dot.urg{background:#D0213A} .dot.cta{background:#E8A400}
+.near{border:0; cursor:pointer; font-family:var(--body)}
+.near-msg{margin:0 0 10px; min-height:1px; font-weight:600}
+#map{height:460px; width:100%; background:var(--bg2); border:2px solid var(--ink); z-index:1}
+@media (max-width:640px){ #map{height:380px} .maphead .near{width:100%; justify-content:center} }
+.pin{box-sizing:border-box; width:18px; height:18px; border-radius:50%; border:2.5px solid #fff; box-shadow:0 1px 4px rgba(0,0,0,.45)}
+.pin.ubs{background:#0B5566} .pin.urg{background:#D0213A; width:24px; height:24px} .pin.cta{background:#E8A400; width:24px; height:24px}
+.pin.me{background:#2B7FFF; width:16px; height:16px; box-shadow:0 0 0 6px rgba(43,127,255,.25)}
+.leaflet-popup-content{font:15px/1.45 var(--body); margin:12px 14px}
+.leaflet-popup-content b{display:block; font-size:1.05em; margin-bottom:2px; color:#17120F}
+.leaflet-popup-content a{color:#B01A31; font-weight:700}
+.ulist{margin-top:28px}
+.usearch{display:block; max-width:520px}
+.usearch span{display:block; font-weight:700; color:var(--ink); margin-bottom:6px}
+.usearch input{width:100%; font:1.05rem var(--body); padding:12px 14px; border:2px solid var(--line); border-radius:6px; background:var(--bg); color:var(--text)}
+.usearch input:focus{border-color:var(--ink); outline:none}
+.units{list-style:none; margin:16px 0 0; padding:0; display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:10px}
+.units li{background:var(--bg2); padding:14px 16px; border-left:5px solid #0B5566; line-height:1.4}
+.units li.urg{border-left-color:#D0213A} .units li.cta{border-left-color:#E8A400}
+.units li b{display:block; color:var(--ink)}
+.units li span{display:block; font-size:.95rem; color:var(--mute)}
+.units li .go{display:inline-flex; gap:12px; margin-top:6px; font-size:.95rem; font-weight:700}
+.units li .go button{background:none; border:0; padding:0; font:inherit; color:var(--redText); cursor:pointer; text-decoration:underline; text-underline-offset:3px}
+.units li em{font-style:normal; font-weight:700; color:var(--redText)}
+.units .none{border-left-color:var(--line); color:var(--mute)}
+.more{margin-top:14px; background:transparent; color:var(--ink); border:2px solid var(--ink); cursor:pointer; font-family:var(--body)}
+.more[hidden]{display:none}
+[id]{scroll-margin-top:120px}
 .share{margin-top:48px; display:flex; flex-wrap:wrap; gap:20px 32px; align-items:center; justify-content:space-between; border-top:2px solid var(--ink); padding-top:32px}
 .share p{margin:0; font-family:var(--head); font-weight:800; font-stretch:80%; font-size:clamp(1.6rem,3.6vw,2.3rem); color:var(--ink); line-height:1.1; max-width:22ch}
 .wa.big{height:auto; padding:18px 26px; font-size:1.1rem; border-radius:8px}
@@ -760,10 +795,32 @@ footer li{margin-bottom:8px; line-height:1.45}
 <section style="padding-top:0">
   <div class="wrap">
     <div class="places">
-      <div class="place rv"><h3>Posto de saúde (UBS)</h3><p>Vá à Unidade Básica de Saúde mais perto da sua casa e peça o <strong>teste rápido</strong> e camisinhas. É grátis e sigiloso.</p></div>
-      <div class="place urg rv"><h3>Urgência: PEP</h3><p>Teve risco nos últimos 3 dias? Vá a uma UPA ou a um hospital <strong>hoje</strong> e peça a PEP.</p></div>
+      <div class="place rv"><h3>Comece pelo posto mais perto de você</h3><p>Vá à <strong>unidade de saúde (UBS) mais perto da sua casa</strong> e se informe. Lá você pede o <strong>teste rápido</strong> e camisinhas, tira suas dúvidas e, se precisar, é encaminhado ao serviço certo. É grátis e sigiloso.</p></div>
+      <div class="place urg rv"><h3>Urgência: PEP</h3><p>Teve risco nos últimos 3 dias? Vá <strong>hoje</strong> a uma unidade de urgência 24 horas e peça a PEP. No mapa abaixo elas aparecem em vermelho.</p></div>
+      <div class="place rv"><h3>Centro de Testagem (CTA)</h3><p>Serviço do município para teste e orientação sobre HIV e outras ISTs.</p><p style="margin-top:8px"><strong>Avenida Clodomir Cardoso, 164, Moropoia.</strong> Manhã e tarde.</p></div>
       <div class="place rv"><h3>Disque Saúde</h3><p>Ligação gratuita para tirar dúvidas e saber onde fica o serviço mais perto de você.</p><a class="tel" href="tel:136">136</a></div>
-      <div class="place todo rv"><h3>Serviço especializado (SAE/CTA)</h3><p>Endereço, horário e telefone do serviço do município: em confirmação com a Secretaria Municipal de Saúde.</p></div>
+    </div>
+
+    <div class="mapblock" id="mapa">
+      <div class="maphead">
+        <div>
+          <h3>Mapa das unidades de saúde de São José de Ribamar</h3>
+          <ul class="legend" aria-label="Legenda">
+            <li><i class="dot ubs"></i>Posto de saúde (UBS)</li>
+            <li><i class="dot urg"></i>Urgência 24 horas</li>
+            <li><i class="dot cta"></i>Centro de Testagem (CTA)</li>
+          </ul>
+        </div>
+        <button class="btn primary near" id="perto" type="button">Achar a mais perto de mim</button>
+      </div>
+      <p class="near-msg" id="pertoMsg" role="status" aria-live="polite"></p>
+      <div id="map" role="region" aria-label="Mapa com as unidades de saúde"></div>
+      <p class="credit">Localização das unidades conforme o cadastro oficial do Ministério da Saúde (CNES, 2026). Se puder, confirme na unidade ou pelo 136 antes de ir. Sua localização, se você usar o botão, fica só no seu celular.</p>
+      <div class="ulist">
+        <label class="usearch"><span>Procure pelo seu bairro</span><input id="busca" type="search" placeholder="Ex.: Maiobinha, Aracagy, Centro…" autocomplete="off"></label>
+        <ol id="lista" class="units"></ol>
+        <button id="maisUnidades" class="btn more" type="button" hidden>Mostrar todas as unidades</button>
+      </div>
     </div>
     <div class="share">
       <p>Aprendeu algo novo? Mande para quem você ama.</p>
@@ -784,7 +841,7 @@ footer li{margin-bottom:8px; line-height:1.45}
         <p>Projeto de Intervenção Coletiva do curso de Medicina da <strong style="color:#fff">Universidade CEUMA</strong>.</p>
         <p>Equipe: Syllas Gabriel, Welison Ryshas, Samuel Batista, Thiago Machado e Israel Mesquita. Orientação: Fernando Bacelar.</p>
         <p>Feito para a comunidade de São José de Ribamar (MA).</p>
-        <p><strong style="color:#fff">Sua privacidade:</strong> este site não usa cookies e não coleta nenhum dado seu.</p>
+        <p><strong style="color:#fff">Sua privacidade:</strong> este site não usa cookies e não coleta nenhum dado seu. O mapa usa o OpenStreetMap, e a sua localização (se você usar o botão do mapa) fica só no seu celular.</p>
       </div>
       <div>
         <h2>Fontes</h2>
@@ -801,6 +858,7 @@ footer li{margin-bottom:8px; line-height:1.45}
           <li><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/h/hepatites-virais/hepatite-b">Hepatite B (Ministério da Saúde)</a> · <a href="https://linhasdecuidado.saude.gov.br/portal/hepatites-virais/sou-paciente/">Hepatites B e C: tratamento e cura (Linhas de Cuidado, MS)</a></li>
           <li><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/c/clamidia">Clamídia (Ministério da Saúde)</a> · PCDT de Atenção Integral às Pessoas com ISTs, Ministério da Saúde</li>
           <li>PCDTs de PEP e PrEP, Ministério da Saúde</li>
+          <li><a href="https://apidadosabertos.saude.gov.br/cnes/estabelecimentos?codigo_municipio=211120">Unidades de saúde de São José de Ribamar: CNES, dados abertos do Ministério da Saúde</a> · Mapa: © colaboradores do OpenStreetMap</li>
           <li>Lei 9.313/1996 · Lei 12.984/2014 · Portaria MTE 1.246/2010</li>
         </ul>
       </div>
@@ -812,6 +870,102 @@ footer li{margin-bottom:8px; line-height:1.45}
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" crossorigin="anonymous"></script>
+<script src="unidades.js"></script>
+<script>
+/* Mapa e lista das unidades de saúde (dados: CNES). Nada é enviado a servidor nenhum. */
+(function(){
+  var U = window.UNIDADES || [];
+  var NOME = {ubs:'Posto de saúde (UBS)', urg:'Urgência 24 horas', cta:'Centro de Testagem (CTA)'};
+  var lista = document.getElementById('lista'), busca = document.getElementById('busca');
+  var msg = document.getElementById('pertoMsg');
+  var map = null, marks = [], me = null, dist = null, todas = false;
+  var mais = document.getElementById('maisUnidades');
+  mais.addEventListener('click', function(){ todas = true; render(); });
+
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function rota(u){ return 'https://www.google.com/maps/dir/?api=1&destination=' + u.la + ',' + u.lo; }
+  function km(a, b, c, d){
+    var R = 6371, r = Math.PI/180, x = (c-a)*r, y = (d-b)*r;
+    var h = Math.sin(x/2)*Math.sin(x/2) + Math.cos(a*r)*Math.cos(c*r)*Math.sin(y/2)*Math.sin(y/2);
+    return 2*R*Math.asin(Math.sqrt(h));
+  }
+  function fmt(k){ return k < 1 ? Math.round(k*1000) + ' m' : k.toFixed(1).replace('.', ',') + ' km'; }
+  function norm(s){ return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
+
+  function render(){
+    var q = norm(busca.value.trim());
+    var itens = U.map(function(u, i){ return {u:u, i:i}; }).filter(function(o){
+      return !q || norm(o.u.n + ' ' + o.u.b + ' ' + o.u.e).indexOf(q) > -1;
+    });
+    if (dist) itens.sort(function(a, b){ return dist[a.i] - dist[b.i]; });
+    var total = itens.length;
+    if (!q && !todas) itens = itens.slice(0, 6);
+    mais.hidden = !!q || todas || total <= 6;
+    mais.textContent = 'Mostrar todas as ' + total + ' unidades';
+    lista.innerHTML = itens.length ? itens.map(function(o){
+      var u = o.u;
+      return '<li class="' + u.c + '"><b>' + esc(u.n) + '</b><span>' + esc(u.e) + ' · ' + esc(u.b) + '</span>' +
+        '<span>' + NOME[u.c] + (u.h ? ' · ' + esc(u.h) : '') + (dist ? ' · <em>' + fmt(dist[o.i]) + '</em>' : '') + '</span>' +
+        '<span class="go">' + (map ? '<button type="button" data-i="' + o.i + '">Ver no mapa</button>' : '') +
+        '<a href="' + rota(u) + '" target="_blank" rel="noopener">Como chegar →</a></span></li>';
+    }).join('') : '<li class="none">Nenhuma unidade encontrada com esse nome. Tente outro bairro, ou ligue 136.</li>';
+  }
+
+  function verNoMapa(i){
+    if (!map) return;
+    document.getElementById('map').scrollIntoView({behavior:'smooth', block:'center'});
+    map.setView([U[i].la, U[i].lo], 16);
+    marks[i].openPopup();
+  }
+
+  if (window.L && document.getElementById('map')) {
+    map = L.map('map', {scrollWheelZoom:false}).setView([-2.535, -44.12], 12);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19, attribution: '&copy; colaboradores do <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    var grupo = [];
+    U.forEach(function(u, i){
+      var s = u.c === 'ubs' ? 18 : 24;
+      var icon = L.divIcon({className:'', html:'<div class="pin ' + u.c + '"></div>', iconSize:[s, s]});
+      var m = L.marker([u.la, u.lo], {icon:icon, title:u.n, zIndexOffset: u.c === 'ubs' ? 0 : 500}).addTo(map)
+        .bindPopup('<b>' + esc(u.n) + '</b>' + NOME[u.c] + (u.h ? ' · ' + esc(u.h) : '') + '<br>' + esc(u.e) + '<br>' + esc(u.b) +
+          '<br><a href="' + rota(u) + '" target="_blank" rel="noopener">Como chegar →</a>');
+      marks.push(m); grupo.push([u.la, u.lo]);
+    });
+    if (grupo.length) map.fitBounds(grupo, {padding:[24, 24]});
+    lista.addEventListener('click', function(e){
+      var b = e.target.closest('button[data-i]'); if (b) verNoMapa(+b.getAttribute('data-i'));
+    });
+  } else {
+    document.getElementById('map').style.display = 'none';
+  }
+
+  document.getElementById('perto').addEventListener('click', function(){
+    if (!navigator.geolocation) { msg.textContent = 'Seu celular não permite achar a localização. Procure pelo seu bairro na lista abaixo.'; return; }
+    msg.textContent = 'Procurando a sua localização…';
+    navigator.geolocation.getCurrentPosition(function(p){
+      var la = p.coords.latitude, lo = p.coords.longitude;
+      dist = U.map(function(u){ return km(la, lo, u.la, u.lo); });
+      var best = 0; dist.forEach(function(d, i){ if (d < dist[best]) best = i; });
+      if (dist[best] > 60) { msg.textContent = 'Parece que você não está em São José de Ribamar. Procure a unidade de saúde da sua cidade ou ligue 136.'; dist = null; render(); return; }
+      msg.innerHTML = 'Mais perto de você: <strong>' + esc(U[best].n) + '</strong>, a cerca de ' + fmt(dist[best]) + '.';
+      if (map) {
+        if (me) map.removeLayer(me);
+        me = L.marker([la, lo], {icon: L.divIcon({className:'', html:'<div class="pin me"></div>', iconSize:[16, 16]}), title:'Você está aqui'}).addTo(map);
+        map.fitBounds([[la, lo], [U[best].la, U[best].lo]], {padding:[50, 50], maxZoom:16});
+        map.once('moveend', function(){ marks[best].openPopup(); });
+      }
+      busca.value = ''; render();
+    }, function(){
+      msg.textContent = 'Não deu para achar a sua localização. Procure pelo seu bairro na lista abaixo.';
+    }, {enableHighAccuracy:true, timeout:12000, maximumAge:60000});
+  });
+
+  busca.addEventListener('input', render);
+  render();
+})();
+</script>
 <script>
 (function(){
   var root = document.documentElement;
