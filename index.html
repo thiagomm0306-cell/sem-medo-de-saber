@@ -143,6 +143,55 @@ header.top{position:sticky; top:0; z-index:50; background:var(--bg); border-bott
 .steps2 b{display:block; font-family:var(--head); text-transform:uppercase; letter-spacing:.08em; font-size:.8rem; margin-bottom:4px}
 @media (max-width:640px){ .analogy{grid-template-columns:1fr; padding:24px 20px; gap:8px} .analogy .q{font-size:3.5rem} .steps2{grid-template-columns:1fr} }
 
+/* ===== sinais ===== */
+.phases{display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:48px; border-top:2px solid var(--ink)}
+.phase{padding:28px 28px 8px 0; position:relative}
+.phase + .phase{padding-left:28px; border-left:1px solid var(--line)}
+.phase .when{font-family:var(--head); font-weight:900; font-stretch:72%; font-size:clamp(1.9rem,3.4vw,2.6rem); line-height:1; color:var(--ink)}
+.phase .stage{display:inline-block; margin:10px 0 14px; font-family:var(--head); text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; font-weight:700; color:var(--redText)}
+.phase.quiet .when{color:var(--mute)}
+.phase ul{margin:12px 0 0; padding-left:20px}
+.phase li{margin-bottom:4px}
+.signs-note{margin-top:36px; display:grid; grid-template-columns:1.2fr 1fr; gap:40px; align-items:start}
+.callout{border-left:6px solid var(--red); background:var(--bg2); padding:24px 26px}
+.callout h3{margin-bottom:8px}
+.callout p{margin:0}
+.callout p + p{margin-top:10px; color:var(--mute); font-size:1rem}
+@media (max-width:860px){ .phases{grid-template-columns:1fr} .phase, .phase + .phase{padding:24px 0 18px; border-left:0; border-bottom:1px solid var(--line)} .signs-note{grid-template-columns:1fr; gap:28px} }
+
+/* foto médica borrada: só aparece se a pessoa pedir */
+.medimg{margin:0}
+.medimg img{width:100%; aspect-ratio:3/2; object-fit:cover; filter:blur(26px) saturate(.6); transform:scale(1.15); transition:filter .4s ease, transform .4s ease}
+.medimg.shown img{filter:none; transform:none}
+.medimg .reveal{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; background:rgba(10,8,7,.45); color:#fff; border:0; width:100%; cursor:pointer; font:700 1rem var(--body); padding:16px; text-align:center}
+.medimg .reveal span{font-weight:400; font-size:.9rem; opacity:.85; max-width:30ch}
+.medimg .reveal b{border:2px solid #fff; border-radius:999px; padding:10px 18px}
+.medimg.shown .reveal{display:none}
+.medimg figcaption{padding-top:10px; font-size:.95rem}
+
+/* ===== outras ISTs ===== */
+.test4{margin-top:36px; display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:center; background:var(--ink); color:var(--bg); padding:28px 32px}
+.test4 .four{font-family:var(--head); font-weight:900; font-stretch:68%; font-size:5.5rem; line-height:.8; color:var(--sun)}
+.test4 p{margin:0; font-size:1.15rem; color:var(--bg)}
+.test4 strong{color:var(--bg)}
+@media (max-width:640px){ .test4{grid-template-columns:1fr; gap:8px; padding:24px 20px} .test4 .four{font-size:4rem} }
+.ists{display:grid; grid-template-columns:1fr 1fr; gap:0 48px; margin-top:40px}
+.ist{padding:26px 0; border-top:1px solid var(--line)}
+.ist .head{display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 14px; margin-bottom:10px}
+.ist h3{font-size:1.7rem; font-stretch:75%}
+.badge{font-family:var(--head); font-weight:800; font-stretch:90%; text-transform:uppercase; letter-spacing:.08em; font-size:.75rem; padding:4px 9px; border:1.5px solid currentColor}
+.badge.cure{color:#1B7F45}
+.badge.ctrl{color:var(--mute)}
+.badge.vac{color:var(--sea)}
+[data-theme="dark"] .badge.cure{color:#4CC77E} [data-theme="dark"] .badge.vac{color:#5FC3D6}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .badge.cure{color:#4CC77E} :root:not([data-theme="light"]) .badge.vac{color:#5FC3D6} }
+.ist p{margin:0 0 8px}
+.ist .how{color:var(--mute); font-size:1rem}
+.ist .how strong{color:var(--text)}
+.ist .medimg{margin-top:14px}
+.medimg .ph-wrap{overflow:hidden; position:relative; background:#000}
+@media (max-width:860px){ .ists{grid-template-columns:1fr} }
+
 /* ===== passa / não passa ===== */
 .tx{display:grid; grid-template-columns:.85fr 1.15fr; gap:56px; margin-top:48px; align-items:start}
 .yes h3, .no h3{font-size:1rem; text-transform:uppercase; letter-spacing:.14em; font-stretch:100%; padding-bottom:14px; border-bottom:3px solid; margin-bottom:6px}
@@ -318,7 +367,7 @@ footer li{margin-bottom:8px; line-height:1.45}
       Sem Medo de Saber
     </a>
     <nav class="nav" aria-label="Seções">
-      <a href="#basico">O básico</a><a href="#transmissao">Como passa</a><a href="#mitos">Mitos</a><a href="#prevencao">Prevenção</a><a href="#tratamento">Tratamento</a><a href="#preconceito">Preconceito</a><a href="#ajuda">Onde ir</a>
+      <a href="#basico">O básico</a><a href="#sinais">Sinais</a><a href="#transmissao">Como passa</a><a href="#mitos">Mitos</a><a href="#ists">Outras ISTs</a><a href="#prevencao">Prevenção</a><a href="#tratamento">Tratamento</a><a href="#preconceito">Preconceito</a><a href="#ajuda">Onde ir</a>
     </nav>
     <div class="tools">
       <button class="tbtn" id="aplus" type="button" aria-label="Aumentar a letra">A+</button>
@@ -329,7 +378,7 @@ footer li{margin-bottom:8px; line-height:1.45}
     </div>
   </div>
   <div class="navrow"><nav class="nav" aria-label="Seções">
-    <a href="#basico">O básico</a><a href="#transmissao">Como passa</a><a href="#mitos">Mitos</a><a href="#prevencao">Prevenção</a><a href="#tratamento">Tratamento</a><a href="#preconceito">Preconceito</a><a href="#ajuda">Onde ir</a>
+    <a href="#basico">O básico</a><a href="#sinais">Sinais</a><a href="#transmissao">Como passa</a><a href="#mitos">Mitos</a><a href="#ists">Outras ISTs</a><a href="#prevencao">Prevenção</a><a href="#tratamento">Tratamento</a><a href="#preconceito">Preconceito</a><a href="#ajuda">Onde ir</a>
   </nav></div>
 </header>
 
@@ -405,8 +454,50 @@ footer li{margin-bottom:8px; line-height:1.45}
   </div>
 </section>
 
+<!-- 3b. SINAIS -->
+<section id="sinais" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="kicker">Sinais</div>
+    <h2 class="rv">O corpo nem sempre avisa.</h2>
+    <p class="lead rv" style="margin-top:20px">Muita gente com HIV passa anos sem sentir nada. Por isso, não espere aparecer um sintoma: <strong>o teste é o único jeito de saber</strong>.</p>
+    <div class="phases">
+      <div class="phase rv">
+        <div class="when">3 a 6 semanas depois</div>
+        <div class="stage">Início</div>
+        <p>Pode parecer uma gripe comum:</p>
+        <ul><li>febre alta</li><li>dores no corpo</li><li>mal-estar</li></ul>
+        <p style="margin-top:12px">Passa sozinho, e muita gente nem percebe.</p>
+      </div>
+      <div class="phase quiet rv">
+        <div class="when">Por vários anos</div>
+        <div class="stage">Fase silenciosa</div>
+        <p>Nenhum sinal visível. A pessoa se sente bem, mas o vírus continua no corpo. <strong>Só o teste mostra.</strong></p>
+      </div>
+      <div class="phase rv">
+        <div class="when">Sem tratamento</div>
+        <div class="stage">Aids</div>
+        <p>Quando as defesas do corpo ficam muito fracas:</p>
+        <ul><li>febre que não passa</li><li>suor à noite</li><li>diarreia que dura muito</li><li>perda de peso sem motivo</li></ul>
+        <p style="margin-top:12px">Aparecem doenças como tuberculose e pneumonia.</p>
+      </div>
+    </div>
+    <div class="signs-note">
+      <div class="callout rv">
+        <h3>Teve algum desses sinais, ou passou por uma situação de risco?</h3>
+        <p>Não espere piorar: procure o posto e faça o teste. É grátis e sigiloso.</p>
+        <p>Esses sinais também aparecem em muitas outras doenças. Ter um deles <strong>não quer dizer</strong> que a pessoa tem HIV.</p>
+      </div>
+      <figure class="medimg rv">
+        <div class="ph-wrap"><img src="img/ist-candidiase-boca.jpg" width="1100" height="736" alt="Foto médica: céu da boca com placas brancas de candidíase, o sapinho" loading="lazy">
+        <button class="reveal" type="button" aria-label="Mostrar foto médica de candidíase na boca"><b>Ver foto médica</b><span>Imagem de uma doença na boca. Toque para mostrar.</span></button></div>
+        <figcaption><strong>Sapinho (candidíase) na boca:</strong> uma infecção que aparece com mais facilidade quando as defesas do corpo estão fracas. <span class="credit" style="display:block">Foto: CDC / Sol Silverman Jr., domínio público</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
 <!-- 4. COMO PASSA -->
-<section id="transmissao" style="background:var(--bg2)">
+<section id="transmissao">
   <div class="wrap">
     <div class="kicker">Transmissão</div>
     <h2 class="rv">Como o HIV passa. E como <span class="hl">não</span> passa.</h2>
@@ -436,7 +527,7 @@ footer li{margin-bottom:8px; line-height:1.45}
 </section>
 
 <!-- 5. MITOS E VERDADES -->
-<section id="mitos">
+<section id="mitos" style="background:var(--bg2)">
   <div class="wrap">
     <div class="kicker">Mitos e verdades</div>
     <h2 class="rv">Coisas que todo mundo já ouviu falar.</h2>
@@ -451,6 +542,60 @@ footer li{margin-bottom:8px; line-height:1.45}
       <div class="myth rv"><span class="tag m">Mito</span><div><h3>“A empresa pode exigir teste de HIV para contratar.”</h3><p>Isso é proibido. E discriminar uma pessoa por ter HIV é crime (Lei 12.984/2014).</p></div></div>
       <div class="myth rv"><span class="tag m">Mito</span><div><h3>“Só homens gays pegam HIV.”</h3><p>Qualquer pessoa que tem relações sexuais pode ter HIV. Cerca de 3 em cada 10 novos casos são em mulheres.</p></div></div>
       <div class="myth rv"><span class="tag m">Mito</span><div><h3>“Já existe cura para o HIV.”</h3><p>Ainda não existe cura. Mas o tratamento controla o vírus e garante uma vida longa e saudável.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5b. OUTRAS ISTs -->
+<section id="ists">
+  <div class="wrap">
+    <div class="kicker">Outras ISTs</div>
+    <h2 class="rv">O HIV não é a única IST.</h2>
+    <p class="lead rv" style="margin-top:20px">IST quer dizer <strong>infecção sexualmente transmissível</strong>. Muitas não dão nenhum sintoma, e todas têm cura ou tratamento grátis no SUS.</p>
+    <div class="test4 rv">
+      <div class="four" aria-hidden="true">4 em 1</div>
+      <p>No posto, os <strong>testes rápidos</strong> mostram HIV, sífilis, hepatite B e hepatite C. São grátis, e o resultado sai em cerca de 30 minutos.</p>
+    </div>
+    <div class="ists">
+      <div class="ist rv">
+        <div class="head"><h3>Sífilis</h3><span class="badge cure">Tem cura</span></div>
+        <p>Primeiro aparece uma <strong>ferida que não dói nem coça</strong>, no lugar do contato. Depois podem surgir <strong>manchas no corpo</strong>, inclusive na palma das mãos e na sola dos pés. Os sinais somem, mas a infecção continua.</p>
+        <p class="how"><strong>Tratamento:</strong> penicilina (injeção), no posto. A parceria também precisa se tratar. Na gravidez, sem tratamento, pode causar aborto ou a morte do bebê.</p>
+        <figure class="medimg">
+          <div class="ph-wrap"><img src="img/ist-sifilis-palmas.jpg" width="1100" height="736" alt="Foto médica: palmas das mãos com manchas acastanhadas da sífilis secundária" loading="lazy">
+          <button class="reveal" type="button" aria-label="Mostrar foto médica de manchas da sífilis nas mãos"><b>Ver foto médica</b><span>Manchas da sífilis nas mãos. Toque para mostrar.</span></button></div>
+          <figcaption><strong>Manchas da sífilis</strong> na palma das mãos, que geralmente não coçam. <span class="credit" style="display:block">Foto: CDC / Robert Sumpter, domínio público</span></figcaption>
+        </figure>
+      </div>
+      <div class="ist rv">
+        <div class="head"><h3>HPV</h3><span class="badge vac">Tem vacina</span></div>
+        <p>A IST mais comum do mundo. Quase sempre não dá sintoma e, na maioria das vezes, o corpo elimina o vírus sozinho. Pode causar <strong>verrugas</strong> na região genital e no ânus, e alguns tipos causam <strong>câncer</strong>, como o de colo do útero.</p>
+        <p class="how"><strong>Vacina grátis:</strong> meninas e meninos de 9 a 14 anos (dose única). Jovens de 15 a 19 anos que não se vacinaram podem tomar até 31/12/2026. Quem usa PrEP, de 15 a 45 anos, também tem direito. Mulheres: façam o exame preventivo.</p>
+      </div>
+      <div class="ist rv">
+        <div class="head"><h3>Hepatite B</h3><span class="badge vac">Tem vacina</span><span class="badge ctrl">Tem tratamento</span></div>
+        <p>Ataca o fígado e quase sempre é <strong>silenciosa</strong>: a pessoa não sente nada por muito tempo.</p>
+        <p class="how"><strong>Vacina grátis no SUS para todas as idades</strong> (3 doses). O tratamento não cura, mas evita complicações no fígado.</p>
+      </div>
+      <div class="ist rv">
+        <div class="head"><h3>Hepatite C</h3><span class="badge cure">Tem cura</span></div>
+        <p>Também ataca o fígado em silêncio, às vezes por muitos anos.</p>
+        <p class="how"><strong>Não tem vacina, mas tem cura:</strong> os remédios do SUS curam mais de 95% dos casos.</p>
+      </div>
+      <div class="ist rv">
+        <div class="head"><h3>Gonorreia e clamídia</h3><span class="badge cure">Têm cura</span></div>
+        <p>Podem causar <strong>corrimento</strong> e <strong>dor ou ardência ao urinar</strong>. Mas a maioria das mulheres não sente nada.</p>
+        <p class="how"><strong>Tratamento:</strong> antibiótico, grátis no SUS. Sem tratamento, podem causar infertilidade. A parceria também precisa se tratar.</p>
+      </div>
+      <div class="ist rv">
+        <div class="head"><h3>Herpes genital</h3><span class="badge ctrl">Tem tratamento</span></div>
+        <p><strong>Bolhas e feridas</strong> que ardem ou doem, e que podem voltar de tempos em tempos.</p>
+        <p class="how"><strong>Tratamento:</strong> não tem cura, mas o remédio diminui as crises e faz as feridas sararem mais rápido.</p>
+      </div>
+    </div>
+    <div class="callout rv" style="margin-top:32px">
+      <h3>Notou ferida, corrimento, verruga ou bolha?</h3>
+      <p>Procure o posto. Não tente se tratar sozinho com remédio de farmácia. E lembre: a <strong>camisinha</strong> protege da maioria das ISTs.</p>
     </div>
   </div>
 </section>
@@ -649,6 +794,11 @@ footer li{margin-bottom:8px; line-height:1.45}
           <li><a href="https://www.brasildefato.com.br/2025/09/25/mulheres-sao-88-das-usuarias-da-prep-embora-concentrem-30-dos-novos-casos-de-hiv/">Mulheres e novos casos de HIV (Brasil de Fato, 2025)</a></li>
           <li><a href="https://oimparcial.com.br/noticias/2025/12/maranhao-e-o-4o-do-nordeste-em-novos-casos-de-hiv-aids/">Maranhão: 4º do Nordeste em novos casos (O Imparcial, 2025)</a></li>
           <li>Indetectável = Intransmissível: estudos PARTNER2 (The Lancet, 2019) e HPTN 052 (NEJM, 2016)</li>
+          <li><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/a/aids-hiv">Aids/HIV: fases e sinais (Ministério da Saúde)</a></li>
+          <li><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/sifilis">Sífilis (Ministério da Saúde)</a></li>
+          <li><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/h/hpv">HPV e vacina (Ministério da Saúde)</a> · <a href="https://agenciagov.ebc.com.br/noticias/202607/jovens-de-15-a-19-anos-podem-se-vacinar-contra-o-hpv-ate-dezembro">resgate 15 a 19 anos até dez/2026 (Agência Gov)</a></li>
+          <li><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/h/hepatites-virais/hepatite-b">Hepatite B (Ministério da Saúde)</a> · <a href="https://linhasdecuidado.saude.gov.br/portal/hepatites-virais/sou-paciente/">Hepatites B e C: tratamento e cura (Linhas de Cuidado, MS)</a></li>
+          <li><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/c/clamidia">Clamídia (Ministério da Saúde)</a> · PCDT de Atenção Integral às Pessoas com ISTs, Ministério da Saúde</li>
           <li>PCDTs de PEP e PrEP, Ministério da Saúde</li>
           <li>Lei 9.313/1996 · Lei 12.984/2014 · Portaria MTE 1.246/2010</li>
         </ul>
@@ -656,7 +806,7 @@ footer li{margin-bottom:8px; line-height:1.45}
     </div>
     <div class="credits">
       <strong style="color:#fff">Fotos.</strong> Imagens reais do Wikimedia Commons, usadas conforme suas licenças. As fotos de pessoas são <strong>ilustrativas</strong>: as pessoas retratadas não têm nenhuma relação com o tema do HIV.
-      Boi da Maioba (abertura, transmissão, apoio): Clarycepb, CC BY-SA 4.0 · Estudantes: Universidade de Brasília, CC BY 2.0 · Teste rápido: Giovanna Rosito / SMS Curitiba · PrEP: NIAID, CC BY 2.0 · Testagem: Cristine Rochol / PMPA · Laço humano: Agência Brasil, CC BY 3.0 BR · Cais de Ribamar: Ramsesmagno, CC BY-SA 4.0.
+      Boi da Maioba (abertura, transmissão, apoio): Clarycepb, CC BY-SA 4.0 · Estudantes: Universidade de Brasília, CC BY 2.0 · Teste rápido: Giovanna Rosito / SMS Curitiba · PrEP: NIAID, CC BY 2.0 · Testagem: Cristine Rochol / PMPA · Laço humano: Agência Brasil, CC BY 3.0 BR · Cais de Ribamar: Ramsesmagno, CC BY-SA 4.0 · Fotos médicas (sífilis, candidíase): CDC, domínio público.
     </div>
   </div>
 </footer>
@@ -681,9 +831,14 @@ footer li{margin-bottom:8px; line-height:1.45}
     root.setAttribute('data-theme', dark ? 'light' : 'dark');
   });
   // Compartilhar no WhatsApp
-  var msg = 'Aprendi coisas sobre HIV que eu não sabia. Dá uma olhada: ' + location.href.split('#')[0];
+  // marca "origem=whatsapp" para o contador separar quem veio por compartilhamento de quem veio pelo banner
+  var msg = 'Aprendi coisas sobre HIV que eu não sabia. Dá uma olhada: ' + location.origin + location.pathname + '?origem=whatsapp';
   document.querySelectorAll('.js-share').forEach(function(b){
     b.addEventListener('click', function(){ window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank', 'noopener'); });
+  });
+  // Fotos médicas: borradas até a pessoa tocar
+  document.querySelectorAll('.medimg .reveal').forEach(function(b){
+    b.addEventListener('click', function(){ b.closest('.medimg').classList.add('shown'); });
   });
   // Entrada suave ao rolar
   var els = document.querySelectorAll('.rv');
